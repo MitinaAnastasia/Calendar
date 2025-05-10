@@ -11,6 +11,7 @@ public class CalendarStorage {
     максимальное число ячеек соответствует случаю, когда 1 число выпадает на воскресенье и в месяце 31 день,
     последняя заполненная будет 37, но чтобы полностью заполнить неделю 6*7=42 ячейки */
     private static final int PLACES_NUMBER = 42;
+    private static final int DAYS_NUMBER = 7;
 
     private static final int[][][] CALENDARS = new int[CALENDARS_NUMBER][MONTHS_NUMBER][PLACES_NUMBER];
 
@@ -55,7 +56,7 @@ public class CalendarStorage {
             }
 
             //в какой день недели 1 число следующего месяца
-            start = (start + daysNumberInMonth) % HALF_CALENDARS_NUMBER;
+            start = (start + daysNumberInMonth) % DAYS_NUMBER;
         }
     }
 
